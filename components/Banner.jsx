@@ -1,0 +1,54 @@
+import React from 'react'
+import Image from 'next/image'
+import { IoIosArrowDown } from 'react-icons/io'
+
+const BannerOption = ({ title, sub }) => {
+  return (
+    <div className="flex justify-center items-center py-2 border-l-[2px] px-7">
+      <div>
+        <p>{title}</p>
+        <p className="text-[#D9D9D9]">{sub}</p>
+      </div>
+      <div className="text-[#D9D9D9] ml-7  text-[25px]">
+        <IoIosArrowDown />
+      </div>
+    </div>
+  )
+}
+
+const Banner = () => {
+  return (
+    <div className="relative w-full h-[500px] flex justify-center items-center text-center">
+      <img
+        src="/assets/buildings.jpeg"
+        alt="Background"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="relative z-10 p-4 text-white flex justify-center flex-col items-center">
+        <h1 className="text-[49px] font-[500]">
+          Attractions, activities and experiences
+        </h1>
+        <p className="mt-2 text-[30px] font-[400]">
+          What do you want to see and do?
+        </p>
+
+        <div className="w-[120%] bg-white text-black text-[15px] font-[400] rounded-[100px] text-left mt-7">
+          <div className="flex justify-between py-3">
+            <div className="flex py-2  px-9 w-[35%]">
+              <div>
+                <p>Location</p>
+                <p className="text-[#D9D9D9]">Type Location</p>
+              </div>
+            </div>
+            {/* <BannerOption title={'Location'} sub={'Type Location'} /> */}
+            <BannerOption title={'Sep 23'} sub={'Select a Date'} />
+            <BannerOption title={'Categories'} sub={'Used'} />
+            <BannerOption title={'Filter'} sub={'Price, Beds and More'} />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Banner
