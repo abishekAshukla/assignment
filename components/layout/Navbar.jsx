@@ -3,16 +3,17 @@ import Dropdown from '../utility/Dropdown'
 
 const Navbar = () => {
   return (
-    <div className="bg-white h-[100px] flex  items-center justify-around ">
+    <div className="bg-white h-[100px] flex  items-center justify-around px-3 ">
       <Image
         src="/assets/Group 1000005861logo.png"
         alt="Example image"
         width={190}
         height={130}
+        className="hidden md:flex"
       />
 
       {/* search bar */}
-      <div className="flex border border-black bg-white justify-between h-[40px] rounded-[100px] ">
+      <div className="flex border border-black bg-white justify-between h-[40px] rounded-[100px] w-full md:w-[50%]">
         <Dropdown />
         <input
           className="h-full border-none outline-none w-[700px]"
@@ -47,7 +48,7 @@ const Navbar = () => {
       </div>
 
       {/* options */}
-      <div className=" bg-white w-[25%] justify-around items-center flex">
+      <div className=" bg-white w-[25%] justify-around items-center hidden md:flex">
         <div>
           <Image
             src="/assets/Group 1000005860language.png"
@@ -66,7 +67,6 @@ const Navbar = () => {
           <div>Signup</div>
         </div>
         <div className="bg-black flex flex-col justify-center items-center rounded-[20px] h-10 w-14">
-          {/* {/* <div className="w-5 h-[2px] bg-white"></div> */}
           <div className="w-5 h-[3px] bg-white"></div>
           <div className="w-5 h-[3px] bg-white my-[5px]"></div>
           <div className="w-5 h-[3px] bg-white"></div>

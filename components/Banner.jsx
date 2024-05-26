@@ -1,13 +1,11 @@
-import React from 'react'
-import Image from 'next/image'
 import { IoIosArrowDown } from 'react-icons/io'
 
 const BannerOption = ({ title, sub }) => {
   return (
-    <div className="flex justify-center items-center py-2 border-l-[2px] px-7">
+    <div className="flex justify-center items-center py-2 border-l-[2px] px-7 location">
       <div>
         <p>{title}</p>
-        <p className="text-[#D9D9D9]">{sub}</p>
+        <input type="text" placeholder={sub} />
       </div>
       <div className="text-[#D9D9D9] ml-7  text-[25px]">
         <IoIosArrowDown />
@@ -18,7 +16,7 @@ const BannerOption = ({ title, sub }) => {
 
 const Banner = () => {
   return (
-    <div className="relative w-full h-[500px] flex justify-center items-center text-center">
+    <div className="relative w-full flex justify-center items-center text-center h-screen md:h-[500px]">
       <img
         src="/assets/buildings.jpeg"
         alt="Background"
@@ -32,15 +30,17 @@ const Banner = () => {
           What do you want to see and do?
         </p>
 
-        <div className="w-[120%] bg-white text-black text-[15px] font-[400] rounded-[100px] text-left mt-7">
-          <div className="flex justify-between py-3">
-            <div className="flex py-2  px-9 w-[35%]">
+        <div className="w-[90%] md:w-[110%] bg-white text-black text-[15px] font-[400] rounded-[20px] md:rounded-[100px] text-left mt-7">
+          <div className="flex justify-between py-3 flex-col md:flex-row">
+            <div className="hidden md:flex py-2  px-9 w-[35%]">
               <div>
                 <p>Location</p>
-                <p className="text-[#D9D9D9]">Type Location</p>
+                <input type="text" placeholder="Type Location" />
               </div>
             </div>
-            {/* <BannerOption title={'Location'} sub={'Type Location'} /> */}
+            <div className="flex md:hidden justify-center">
+              <BannerOption title="Location" sub={'Type Location'} />
+            </div>
             <BannerOption title={'Sep 23'} sub={'Select a Date'} />
             <BannerOption title={'Categories'} sub={'Used'} />
             <BannerOption title={'Filter'} sub={'Price, Beds and More'} />
